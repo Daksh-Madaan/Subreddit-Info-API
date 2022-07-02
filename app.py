@@ -26,15 +26,16 @@ def main(n):
         r = requests.get(url, headers=head)
         soup = BeautifulSoup(r.text, 'html.parser')
 
-        m = soup.find('div', class_='_3XFx6CfPlg-4Usgxm0gK8R').text
-        c = soup.find('div', class_='_2QZ7T4uAFMs_N83BZcN-Em').text
+        m = soup.find('div', class_='_3b9utyKN3e_kzVZ5ngPqAu').text
+        c = soup.find('div', class_='_1sDtEhccxFpHDn2RUhxmSq').text
         a = soup.find('div', class_='_1zPvgKHteTOub9dKkvrOl4').text
 
         result = {
             "Valid": True,
             "Members": m,
             "Created": c,
-            "About": a
+            "About": a,
+            "URL": url
         }
 
         return jsonify(result)
